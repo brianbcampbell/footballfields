@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registration Success</title>
+    <style th:inline="css">
+        span {
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+        }
+
+		div.drawfield {
+			background-image: url([(${result.filename})]);
+			background-repeat: repeat;
+			height: [(${result.bgYpx})]px;
+            width: [(${result.bgXpx})]px;
+        }
+
+        div.fill {
+            border-collapse: collapse;
+            border-color: red;
+            border-style: solid;
+            height: [(${result.yft})]px;
+            width: [(${result.xft})]px;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h2>Calculated:</h2>
+    <span>request:	</span><span th:text="${result.request}"></span><br/>
+    <span>area:		</span><span th:text="${result.xft}+'x'+${result.yft}"></span><br/>
+    <span>bg:	    </span><span th:text="${result.bgXpx}+'x'+${result.bgYpx}"></span><br/>
+</div>
+<div class="drawfield">
+	<div class="fill" ></div>
+</div>
+</body>
+</html>

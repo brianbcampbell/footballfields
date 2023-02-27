@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+<style type="text/css">
+	label {
+		display: inline-block;
+		width: 200px;
+		margin: 5px;
+		text-align: left;
+	}
+	input[type=text] {
+		display: inline-block;
+		width: 200px;
+	}
+	input[type=radio] {
+		margin-left: 45px;
+	}
+	input[type=checkbox] {
+		margin-right: 190px;
+	}	
+	button {
+		padding: 5px;
+		margin: 10px;
+	}
+</style>
+</head>
+<body>
+	<div align="center">
+		<h1>How many football fields?</h1>
+		<form action="#" th:action="@{/register}" method="post" th:object="${formdata}">
+			<label>sqft:</label>
+			<input type="number" th:field="*{sqft}" /><br/>
+			<hr text />or<br/>
+			<label>acres:</label>
+			<input type="number"  step="0.000001" th:field="*{acres}" /><br/>
+				<hr/>or<br/>
+			<label>lengthft:</label>
+			<input type="number" th:field="*{lengthft}" /><br/>
+
+			<label>widthft:</label>
+			<input type="number" th:field="*{widthft}" /><br/>
+
+			<button type="submit">Calculate</button>
+		</form>
+	</div>
+</body>
+</html>
